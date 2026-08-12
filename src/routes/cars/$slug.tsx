@@ -13,7 +13,8 @@ import { isCarFree } from "@/lib/availability";
 import { formatCurrency } from "@/lib/pricing";
 import { carTitle, toLocalInput } from "@/lib/format";
 import { supabase } from "@/integrations/supabase/client";
-import heroCar from "@/assets/hero-car.jpg";
+
+const PLACEHOLDER_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23e5e7eb' width='400' height='300'/%3E%3Ctext x='50%' y='50%' font-family='system-ui' font-size='16' fill='%239ca3af' text-anchor='middle' dominant-baseline='middle'%3ENo image available%3C/text%3E%3C/svg%3E";
 
 export const Route = createFileRoute("/cars/$slug")({
   head: ({ params }) => ({
@@ -89,11 +90,11 @@ function CarDetailPage() {
     setSaving(true);
     try {
       const booking = await createBooking({
-        carId: data.id,
+        carId: data!.id,
         pickupAt: start,
         dropAt: end,
-        pickupLocationId: data.location_id,
-        dropLocationId: data.location_id,
+        pickupLocationId: data!.location_id,
+        dropLocationId: data!.location_id,
         customerName: name,
         customerEmail: email,
         customerPhone: phone,
@@ -119,7 +120,7 @@ function CarDetailPage() {
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_1fr]">
         <div>
           <img
-            src={data.images[0] ?? heroCar}
+            src={data.images[0] ?? PLACEHOLDER_IMAGE}
             alt={`${carTitle(data)} self-drive rental car`}
             className="aspect-16/10 w-full rounded-2xl object-cover"
           />
@@ -138,7 +139,7 @@ function CarDetailPage() {
               ["Seats", String(data.seats)],
               ["Type", data.car_type],
               ["Branch", data.location?.name ?? "—"],
-              ["Odometer", `${data.odometer_km ?? 0} km`],
+              // ["Odometer", `${data.odometer_km ?? 0} km`],
               ["Daily rate", formatCurrency(Number(data.daily_rate))],
               ["Deposit", formatCurrency(deposit)],
             ].map(([label, value]) => (
