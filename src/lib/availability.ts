@@ -8,6 +8,64 @@ export interface BusySlot {
   kind: string;
 }
 
+export type DayState = "available" | "booked" | "maintenance" | "blocked" | "unavailable";
+
+export interface AvailabilityGrid {
+  days: Date[];
+  rows: Record<string, DayState[]>;
+}
+
+/**
+ * Build an availability grid for display
+ */
+export function buildGrid(
+  slots: BusySlot[],
+  carIds: string[],
+  from: Date,
+  days: number,
+): AvailabilityGrid {
+  const daysList: Date[] = [];
+  for (let i = 0; i < days; i++) {
+    const date = new Date(from);
+    date.setDate(date.getDate() + i);
+    date.setHours(0, 0, 0, 0);
+    daysList.push(date);
+  }
+
+  const rows: Record<string, DayState[]> = {};
+
+  for (const carId of carIds) {
+    rows[carId] = daysList.map((date) => {
+      const dayStart = new Date(date).getTime();
+      const dayEnd = new Date(date);
+      dayEnd.setDate(dayEnd.getDate() + 1);
+      const dayEndTime = dayEnd.getTime();
+
+      // Find all slots for this car on this day
+      const daySlots = slots.filter((slot) => {
+        if (slot.car_id !== carId) return false;
+        const slotStart = new Date(slot.starts_at).getTime();
+        const slotEnd = new Date(slot.ends_at).getTime();
+        // Check if slot overlaps with this day
+        return !(slotEnd <= dayStart || slotStart >= dayEndTime);
+      });
+
+      if (daySlots.length === 0) {
+        return "available";
+      }
+
+      // Determine state based on slot kinds
+      const kinds = daySlots.map((s) => s.kind);
+      if (kinds.includes("booking")) return "booked";
+      if (kinds.includes("maintenance")) return "maintenance";
+      if (kinds.includes("block")) return "blocked";
+      return "unavailable";
+    });
+  }
+
+  return { days: daysList, rows };
+}
+
 /**
  * Check if a car is available during a given time period
  * @param slots Array of busy time slots
