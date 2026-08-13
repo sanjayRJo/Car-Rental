@@ -61,6 +61,24 @@ export function SiteFooter() {
           <p className="mb-3 font-medium uppercase tracking-wide opacity-60">Support</p>
           <p>+91 90000 11000</p>
           <p>care@Carvyo.example</p>
+          <div className="mt-6 border-t border-white/10 pt-4">
+            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] opacity-60">Built by</p>
+            <a
+              href="https://sjoenix.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 rounded-md border border-white/10 bg-white/5 px-3 py-2 transition-opacity hover:opacity-90"
+            >
+              <img
+                src="https://sjoenix.vercel.app/assets/sjoenix-brand-BWnhMCaE.png"
+                alt="SJOENIX TECHNOLOGIES"
+                className="h-7 w-auto object-contain"
+              />
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
+                SJOENIX TECHNOLOGIES
+              </span>
+            </a>
+          </div>
           <p className="mt-4 text-xs opacity-60">
             © {new Date().getFullYear()} Carvyo Mobility. All rights reserved.
           </p>
