@@ -21,7 +21,7 @@ export function SiteHeader() {
           <span className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground">
             <CarFront className="size-5" aria-hidden />
           </span>
-          Drivora
+          Carvyo
         </Link>
 
         <nav aria-label="Main" className="hidden flex-1 items-center gap-6 md:flex">

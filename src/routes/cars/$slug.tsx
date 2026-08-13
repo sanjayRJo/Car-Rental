@@ -19,13 +19,13 @@ const PLACEHOLDER_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 export const Route = createFileRoute("/cars/$slug")({
   head: ({ params }) => ({
     meta: [
-      { title: `Rent the ${params.slug.replace(/-/g, " ")} | Drivora` },
+      { title: `Rent the ${params.slug.replace(/-/g, " ")} | Carvyo` },
       {
         name: "description",
         content:
           "Full specs, pricing and live availability for this vehicle. Reserve it in a couple of minutes with transparent, itemised pricing.",
       },
-      { property: "og:title", content: "Vehicle details | Drivora" },
+      { property: "og:title", content: "Vehicle details | Carvyo" },
       { property: "og:description", content: "Specs, pricing and availability for this vehicle." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

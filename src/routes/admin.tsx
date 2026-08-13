@@ -23,14 +23,14 @@ import { carTitle, formatDateTime, statusLabel } from "@/lib/format";
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Fleet operations dashboard | Drivora" },
+      { title: "Fleet operations dashboard | Carvyo" },
       {
         name: "description",
         content:
-          "Admin console for the Drivora fleet: revenue and utilisation KPIs, booking lifecycle control, vehicle status and notification logs.",
+          "Admin console for the Carvyo fleet: revenue and utilisation KPIs, booking lifecycle control, vehicle status and notification logs.",
       },
-      { property: "og:title", content: "Fleet operations dashboard | Drivora" },
-      { property: "og:description", content: "Manage the Drivora fleet, bookings and customers." },
+      { property: "og:title", content: "Fleet operations dashboard | Carvyo" },
+      { property: "og:description", content: "Manage the Carvyo fleet, bookings and customers." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -100,7 +100,7 @@ function AdminPage() {
     const url = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
     const link = document.createElement("a");
     link.href = url;
-    link.download = "drivora-bookings.csv";
+    link.download = "Carvyo-bookings.csv";
     link.click();
     URL.revokeObjectURL(url);
   }

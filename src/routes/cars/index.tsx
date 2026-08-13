@@ -28,16 +28,16 @@ export const Route = createFileRoute("/cars/")({
   }),
   head: () => ({
     meta: [
-      { title: "Available self-drive cars | Drivora" },
+      { title: "Available self-drive cars | Carvyo" },
       {
         name: "description",
         content:
-          "Filter the Drivora fleet by city, body type, fuel and transmission, then check each vehicle's live day-by-day availability before you book.",
+          "Filter the Carvyo fleet by city, body type, fuel and transmission, then check each vehicle's live day-by-day availability before you book.",
       },
-      { property: "og:title", content: "Available self-drive cars | Drivora" },
+      { property: "og:title", content: "Available self-drive cars | Carvyo" },
       {
         property: "og:description",
-        content: "Vehicle-level availability for every car in the Drivora fleet.",
+        content: "Vehicle-level availability for every car in the Carvyo fleet.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

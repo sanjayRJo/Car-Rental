@@ -23,13 +23,13 @@ const PLACEHOLDER_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Drivora — Self-drive car rental across Tamil Nadu" },
+      { title: "Carvyo — Self-drive car rental across Tamil Nadu" },
       {
         name: "description",
         content:
           "Book self-drive cars by the hour, day or trip in Chennai, Coimbatore, Trichy, Madurai and Thanjavur. Live vehicle-level availability and transparent pricing.",
       },
-      { property: "og:title", content: "Drivora — Self-drive car rental" },
+      { property: "og:title", content: "Carvyo — Self-drive car rental" },
       {
         property: "og:description",
         content:

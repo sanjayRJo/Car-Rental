@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="ink-panel mt-24">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div>
-          <p className="font-display text-lg font-semibold">Drivora</p>
+          <p className="font-display text-lg font-semibold">Carvyo</p>
           <p className="mt-3 max-w-xs text-sm opacity-75">
             Self-drive rentals across Tamil Nadu. Hourly, daily or trip-based — with transparent
             pricing and real vehicle-level availability.
@@ -60,9 +60,9 @@ export function SiteFooter() {
         <div className="text-sm opacity-80">
           <p className="mb-3 font-medium uppercase tracking-wide opacity-60">Support</p>
           <p>+91 90000 11000</p>
-          <p>care@drivora.example</p>
+          <p>care@Carvyo.example</p>
           <p className="mt-4 text-xs opacity-60">
-            © {new Date().getFullYear()} Drivora Mobility. All rights reserved.
+            © {new Date().getFullYear()} Carvyo Mobility. All rights reserved.
           </p>
         </div>
       </div>

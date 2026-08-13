@@ -11,14 +11,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in or create an account | Drivora" },
+      { title: "Sign in or create an account | Carvyo" },
       {
         name: "description",
         content:
-          "Log in to manage your Drivora self-drive bookings, or create an account in seconds to reserve a car.",
+          "Log in to manage your Carvyo self-drive bookings, or create an account in seconds to reserve a car.",
       },
-      { property: "og:title", content: "Sign in | Drivora" },
-      { property: "og:description", content: "Manage your Drivora self-drive rentals." },
+      { property: "og:title", content: "Sign in | Carvyo" },
+      { property: "og:description", content: "Manage your Carvyo self-drive rentals." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -70,7 +70,7 @@ function AuthPage() {
   return (
     <PageShell>
       <div className="mx-auto w-full max-w-md px-4 py-16">
-        <h1 className="font-display text-3xl font-semibold">Your Drivora account</h1>
+        <h1 className="font-display text-3xl font-semibold">Your Carvyo account</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           The first account created on a fresh install becomes the admin.
         </p>

@@ -12,14 +12,14 @@ import { carTitle, formatDateTime, statusLabel } from "@/lib/format";
 export const Route = createFileRoute("/account")({
   head: () => ({
     meta: [
-      { title: "My bookings | Drivora" },
+      { title: "My bookings | Carvyo" },
       {
         name: "description",
         content:
-          "Track upcoming and past Drivora rentals, extend an active trip, download invoices and cancel bookings.",
+          "Track upcoming and past Carvyo rentals, extend an active trip, download invoices and cancel bookings.",
       },
-      { property: "og:title", content: "My bookings | Drivora" },
-      { property: "og:description", content: "Manage your Drivora self-drive rentals." },
+      { property: "og:title", content: "My bookings | Carvyo" },
+      { property: "og:description", content: "Manage your Carvyo self-drive rentals." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
